@@ -1,18 +1,22 @@
 {
   "lambda": {
     "envVars": [
-      "IMAGE_RESIZE_BUCKET","JAWS_DATA_MODEL_STAGE"
+      "IMAGE_RESIZE_BUCKET",
+      "JAWS_DATA_MODEL_STAGE"
     ],
     "deploy": true,
     "package": {
       "optimize": {
-        "builder": false,
+        "builder": "browserify",
         "minify": true,
         "ignore": [],
         "exclude": [
-          "aws-sdk"
+          "aws-sdk",
+          "gm"
         ],
-        "includePaths": []
+        "includePaths": [
+          "aws_modules/imgresize/node_modules/gm"
+        ]
       },
       "excludePatterns": []
     },
