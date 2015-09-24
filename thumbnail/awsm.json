@@ -29,27 +29,31 @@
     }
   },
   "apiGateway": {
-    "deploy": false,
     "cloudFormation": {
       "Type": "AWS",
-      "Path": "imgresize/thumbnail",
-      "Method": "GET",
+      "Path": "resource/action",
+      "Method": "POST",
       "AuthorizationType": "none",
       "ApiKeyRequired": false,
-      "RequestTemplates": {},
-      "RequestParameters": {},
+      "RequestTemplates": {
+        "application/json": "{\"url\":\"$input.params('url')\"}"
+      },
+      "RequestParameters": {
+        "integration.request.querystring.integrationQueryParam": "method.request.querystring.url"
+      },
+      "CacheNamespace": "String",
+      "CacheKeyParameters": [],
       "Responses": {
-        "400": {
-          "statusCode": "400"
-        },
-        "default": {
+        "2//d{2}": {
           "statusCode": "200",
-          "responseParameters": {},
+          "responseParameters": {
+            "method.response.header.test-method-response-header": "integration.response.header.integrationResponseHeaderParam1"
+          },
           "responseTemplates": {
-            "application/json": ""
+            "application/json": "json 200 response template"
           }
         }
       }
     }
-  }
+  },
 }
