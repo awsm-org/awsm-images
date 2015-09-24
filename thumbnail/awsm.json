@@ -3,10 +3,10 @@
     "envVars": [
       "IMAGE_RESIZE_BUCKET"
     ],
-    "deploy": false,
+    "deploy": true,
     "package": {
       "optimize": {
-        "builder": "browserify",
+        "builder": false,
         "minify": true,
         "ignore": [],
         "exclude": [

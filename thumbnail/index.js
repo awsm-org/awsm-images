@@ -24,7 +24,7 @@ exports.run = function(event, context, cb) {
   }
 
   var imgBucket = process.env.IMAGE_RESIZE_BUCKET,
-      key       = [process.env.JAWS_STAGE, shortid.generate() + '.jpg'].join('/');
+      key       = [process.env.JAWS_DATA_MODEL_STAGE, shortid.generate() + '.jpg'].join('/');
 
   ir.thumbnail(event.url)
       .then(function(thumbBuffer) {
@@ -32,9 +32,10 @@ exports.run = function(event, context, cb) {
         var params = {
           Bucket: imgBucket,
           Key: key,
-          ACL: 'public',
+          ACL: 'public-read',
           Body: thumbBuffer,
         };
+
         return s3.putObjectAsync(params);
       })
       .then(function() {
