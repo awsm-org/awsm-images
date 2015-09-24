@@ -32,7 +32,7 @@
     "cloudFormation": {
       "Type": "AWS",
       "Path": "resource/action",
-      "Method": "POST",
+      "Method": "GET",
       "AuthorizationType": "none",
       "ApiKeyRequired": false,
       "RequestTemplates": {
