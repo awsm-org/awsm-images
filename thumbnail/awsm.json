@@ -1,7 +1,7 @@
 {
   "lambda": {
     "envVars": [
-      "IMAGE_RESIZE_BUCKET"
+      "IMAGE_RESIZE_BUCKET","JAWS_DATA_MODEL_STAGE"
     ],
     "deploy": true,
     "package": {
