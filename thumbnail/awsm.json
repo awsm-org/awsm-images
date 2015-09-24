@@ -36,7 +36,7 @@
       "AuthorizationType": "none",
       "ApiKeyRequired": false,
       "RequestTemplates": {
-        "application/json": "{\"url\":\"$input.params('url')\"}"
+        "application/json": "{\"url\":\"$util.urlDecode($input.params('url'))\"}"
       },
       "RequestParameters": {
         "integration.request.querystring.integrationQueryParam": "method.request.querystring.url"
