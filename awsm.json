@@ -1,0 +1,60 @@
+{
+  "name": "imgresize",
+  "version": "0.0.1",
+  "location": "https://github.com/awsm-org/img-resize",
+  "author": "Ryan Pendergast <ryanp@doapps.com>",
+  "description": "Given image url, resize and save to s3",
+  "resources": {
+    "cloudFormation": {
+      "LambdaIamPolicyDocumentStatements": [
+        {
+          "Effect": "Allow",
+          "Action": [
+            "s3:PutObject",
+            "s3:PutObjectAcl"
+          ],
+          "Resource": [
+            {
+              "Fn::Join": [
+                "",
+                [
+                  "arn:aws:s3:::",
+                  "imgresize.",
+                  {
+                    "Ref": "aaProjectDomain"
+                  },
+                  "/",
+                  {
+                    "Ref": "aaStage"
+                  },
+                  "*"
+                ]
+              ]
+            }
+          ]
+        }
+      ],
+      "ApiGatewayIamPolicyDocumentStatements": [],
+      "Resources": {
+        "FeedsS3Bucket": {
+          "Type": "AWS::S3::Bucket",
+          "DeletionPolicy": "Delete",
+          "AccessControl": "PublicRead",
+          "Properties": {
+            "BucketName": {
+              "Fn::Join": [
+                ".",
+                [
+                  "imgresize",
+                  {
+                    "Ref": "aaProjectDomain"
+                  }
+                ]
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
