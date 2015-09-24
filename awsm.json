@@ -36,7 +36,7 @@
       ],
       "ApiGatewayIamPolicyDocumentStatements": [],
       "Resources": {
-        "FeedsS3Bucket": {
+        "ImgS3Bucket": {
           "Type": "AWS::S3::Bucket",
           "DeletionPolicy": "Delete",
           "Properties": {
