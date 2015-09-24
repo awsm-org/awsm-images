@@ -39,8 +39,8 @@
         "FeedsS3Bucket": {
           "Type": "AWS::S3::Bucket",
           "DeletionPolicy": "Delete",
-          "AccessControl": "PublicRead",
           "Properties": {
+            "AccessControl": "PublicRead",
             "BucketName": {
               "Fn::Join": [
                 ".",
