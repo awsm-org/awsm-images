@@ -18,7 +18,7 @@ Goal: Given image url, creates a thumbnail and saves to s3 bucket with the `JAWS
   1. This downloads the module, installs its dependencies (via npm), merges in CF resources to project `resources-cf.json`, merges in CF lambda IAM rules to project `resources-cf.json`. Cool right?
 1.  Run `jaws env list <stage> all`  You will notice how `IMAGE_RESIZE_BUCKET` is not set.
 1.  Run `jaws env set <stage> all IMAGE_RESIZE_BUCKET <imgresize.yourdomain.from.new.jaws.project.prompt>`
-1.  Cd into `back/aws_modules/imgresize/thumbnail` and run `jaws deploy lambda`.  Note how small the lambda code size is ;). Most of the size is the aws-sdk that can't be browserified.
+1.  Cd into `back/aws_modules/imgresize/thumbnail` and run `jaws deploy lambda`.  Note how small the lambda code size is ;). Most of the size is the aws-sdk that [can't currently be browserified](https://github.com/aws/aws-sdk-js/issues/696).
 1.  Find an image that is > 100x100 and test the lambda sending json `{"url":"url here"}`
 
 **Note**: at the time of writing this, we are having issues with [API gateway permissions](https://github.com/awslabs/aws-apigateway-swagger-importer/issues/41#issuecomment-143066855) so `jaws deploy endpoint` isn't working correctly.  You can use tha APIG web UI to hookup to your lambda using the following integration template:
