@@ -8,6 +8,8 @@ var AWS     = require('aws-sdk'),
 
 var ir = require('../lib/resize.js');
 
+console.log('Using AWS SDK ver: ' + require('aws-sdk/package.json').version);
+
 /**
  * Export for lambda handler
  * @param event
