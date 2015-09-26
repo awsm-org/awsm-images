@@ -1,6 +1,6 @@
-# Image resizing JAWS awsm module
+# awsm-images
 
-This is a sample awsm (in node.js) that showcases many of the features and integration points of JAWS:
+This awsm does image modifications (resizing, etc.) and showcases many of the features and integration points of JAWS:
 
 *  browserify optimization
 *  including own version of the `aws-sdk`
@@ -8,8 +8,6 @@ This is a sample awsm (in node.js) that showcases many of the features and integ
 *  Leverage awsm CloudFormation extension points (creates s3 bucket AND sets up fine grain perms)
 
 ## Quickstart
-
-**Note**: at the time of writing this, you need to be running `master` branch of jaws cli (key fixes in > v1.1.0)
 
 Goal: Given image url, creates a thumbnail and saves to s3 bucket with the `JAWS_DATA_MODEL_STAGE` prefix (default jaws env var) and an env var defined by this awsm (`IMAGE_RESIZE_BUCKET`)
 
