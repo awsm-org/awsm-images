@@ -36,6 +36,7 @@ exports.run = function(event, context, cb) {
           Key: key,
           ACL: 'public-read',
           Body: thumbBuffer,
+          ContentType: 'image/jpeg'
         };
 
         return s3.putObjectAsync(params);
