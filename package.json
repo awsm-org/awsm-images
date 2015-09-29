@@ -10,7 +10,7 @@
   },
   "keywords": [],
   "scripts": {
-    "postinstall" : "jaws postinstall awsm-images npm"
+    "postinstall" : "jaws module postinstall awsm-images npm"
   },
   "devDependencies": {},
   "dependencies": {
