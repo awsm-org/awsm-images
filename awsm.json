@@ -1,7 +1,7 @@
 {
-  "name": "imgresize",
+  "name": "awsm-images",
   "version": "0.0.1",
-  "location": "https://github.com/awsm-org/img-resize",
+  "location": "https://github.com/awsm-org/awsm-images",
   "author": "Ryan Pendergast <ryanp@doapps.com>",
   "description": "Given image url, resize and save to s3",
   "resources": {
