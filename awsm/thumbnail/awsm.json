@@ -1,0 +1,59 @@
+{
+  "lambda": {
+    "envVars": [
+      "IMAGE_RESIZE_BUCKET",
+      "JAWS_DATA_MODEL_STAGE"
+    ],
+    "deploy": true,
+    "package": {
+      "optimize": {
+        "builder": "browserify",
+        "minify": true,
+        "ignore": [],
+        "exclude": [
+          "aws-sdk",
+          "gm"
+        ],
+        "includePaths": [
+          "aws_modules/imgresize/node_modules/gm",
+          "aws_modules/imgresize/node_modules/aws-sdk"
+        ]
+      },
+      "excludePatterns": []
+    },
+    "cloudFormation": {
+      "Description": "",
+      "Handler": "aws_modules/imgresize/thumbnail/handler.handler",
+      "MemorySize": 1024,
+      "Runtime": "nodejs",
+      "Timeout": 6
+    }
+  },
+  "apiGateway": {
+    "cloudFormation": {
+      "Type": "AWS",
+      "Path": "images/thumbnail",
+      "Method": "GET",
+      "AuthorizationType": "none",
+      "ApiKeyRequired": false,
+      "RequestTemplates": {
+        "application/json": "{\"url\":\"$util.urlDecode($input.params('url'))\"}"
+      },
+      "RequestParameters": {
+        "integration.request.querystring.integrationQueryParam": "method.request.querystring.url"
+      },
+      "CacheNamespace": "String",
+      "CacheKeyParameters": [],
+      "Responses": {
+        "default": {
+          "statusCode": "200",
+          "responseParameters": {
+          },
+          "responseTemplates": {
+            "application/json": ""
+          }
+        }
+      }
+    }
+  }
+}
