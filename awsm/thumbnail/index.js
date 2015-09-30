@@ -21,7 +21,7 @@
  * Keep in mind awsm nodejs mods are just npm modules and should be treated as such.
  */
 
-var ir = require('awsm-images/lib/resize.js');
+var ir = require('awsm-images').resize;
 
 /**
  * Export for lambda handler
