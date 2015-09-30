@@ -15,8 +15,8 @@
           "gm"
         ],
         "includePaths": [
-          "node_modules/gm",
-          "node_modules/aws-sdk"
+          "node_modules/awsm-images/node_modules/gm",
+          "node_modules/awsm-images/node_modules/aws-sdk"
         ]
       },
       "excludePatterns": []
