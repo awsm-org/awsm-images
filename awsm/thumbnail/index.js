@@ -6,7 +6,7 @@ var AWS     = require('aws-sdk'),
     rp      = require('request-promise'),
     shortid = require('shortid');
 
-var ir = require('../lib/resize.js');
+var ir = require('awsm-images/lib/resize.js');
 
 console.log('Using AWS SDK ver: ' + require('aws-sdk/package.json').version);
 
