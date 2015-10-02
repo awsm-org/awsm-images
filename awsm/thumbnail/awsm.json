@@ -15,15 +15,15 @@
           "gm"
         ],
         "includePaths": [
-          "aws_modules/imgresize/node_modules/gm",
-          "aws_modules/imgresize/node_modules/aws-sdk"
+          "node_modules/awsm-images/node_modules/gm",
+          "node_modules/awsm-images/node_modules/aws-sdk"
         ]
       },
       "excludePatterns": []
     },
     "cloudFormation": {
       "Description": "",
-      "Handler": "aws_modules/imgresize/thumbnail/handler.handler",
+      "Handler": "aws_modules/awsm-images/thumbnail/handler.handler",
       "MemorySize": 1024,
       "Runtime": "nodejs",
       "Timeout": 6

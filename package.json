@@ -1,6 +1,6 @@
 {
-  "name": "imageresize",
-  "version": "0.0.1",
+  "name": "awsm-images",
+  "version": "0.1.0",
   "description": "",
   "author": "",
   "license": "",
@@ -9,6 +9,9 @@
     "url": "https://github.com/awsm-org/img-resize"
   },
   "keywords": [],
+  "scripts": {
+    "postinstall" : "jaws postinstall awsm-images npm"
+  },
   "devDependencies": {},
   "dependencies": {
     "aws-sdk": "^2.2.4",
